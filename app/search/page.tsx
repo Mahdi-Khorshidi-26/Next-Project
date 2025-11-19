@@ -9,7 +9,7 @@ interface SearchPageProps {
 }
 
 async function SearchResults({ query }: { query: string }) {
-  const data = await shopifyFetch<{
+  const { data } = await shopifyFetch<{
     products: {
       edges: Array<{
         node: Product;

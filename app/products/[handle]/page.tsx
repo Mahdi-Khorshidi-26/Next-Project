@@ -11,7 +11,7 @@ interface ProductPageProps {
 
 async function getProduct(handle: string): Promise<Product | null> {
   try {
-    const data = await shopifyFetch<any>({
+    const { data } = await shopifyFetch<any>({
       query: GET_PRODUCT_BY_HANDLE,
       variables: { handle },
       revalidate: 300, // 5 minutes

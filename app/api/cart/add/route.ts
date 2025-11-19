@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
 
     if (cartId) {
       // Add to existing cart
-      const result = await shopifyFetch<any>({
+      const { data: result } = await shopifyFetch<any>({
         query: ADD_TO_CART,
         variables: {
           cartId,
@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
       cart = result.cartLinesAdd.cart;
     } else {
       // Create new cart
-      const result = await shopifyFetch<any>({
+      const { data: result } = await shopifyFetch<any>({
         query: CREATE_CART,
         variables: {
           input: {

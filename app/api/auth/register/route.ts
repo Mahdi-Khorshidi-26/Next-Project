@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Create customer account
-    const createResult = await shopifyFetch({
+    const { data: createResult } = await shopifyFetch({
       query: CUSTOMER_CREATE,
       variables: {
         input: {
@@ -62,7 +62,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Auto-login after registration
-    const loginResult = await shopifyFetch({
+    const { data: loginResult } = await shopifyFetch({
       query: CUSTOMER_ACCESS_TOKEN_CREATE,
       variables: {
         input: {

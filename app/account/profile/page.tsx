@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { cn } from "@/lib/utils/helpers";
 
 export default function ProfilePage() {
   const [formData, setFormData] = useState({
@@ -162,9 +163,12 @@ export default function ProfilePage() {
           </div>
 
           <div className="flex items-center justify-between pt-4">
-            <Button type="button" variant="secondary" asChild>
-              <Link href="/account">Cancel</Link>
-            </Button>
+            <Link
+              href="/account"
+              className={cn(buttonVariants({ variant: "secondary" }))}
+            >
+              Cancel
+            </Link>
             <Button type="submit" loading={loading}>
               Save Changes
             </Button>

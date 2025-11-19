@@ -12,7 +12,7 @@ export async function GET() {
       return NextResponse.json({ cart: null });
     }
 
-    const result = await shopifyFetch<any>({
+    const { data: result } = await shopifyFetch<any>({
       query: GET_CART,
       variables: { cartId },
       cache: "no-store",

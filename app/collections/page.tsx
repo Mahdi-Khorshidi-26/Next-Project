@@ -28,7 +28,7 @@ const GET_COLLECTIONS = `
 
 async function getCollections() {
   try {
-    const data = await shopifyFetch<{
+    const { data } = await shopifyFetch<{
       collections: {
         edges: Array<{
           node: {

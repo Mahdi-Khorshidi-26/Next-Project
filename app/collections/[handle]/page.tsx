@@ -11,7 +11,7 @@ interface CollectionPageProps {
 
 async function getCollection(handle: string): Promise<Collection | null> {
   try {
-    const data = await shopifyFetch<{ collection: any }>({
+    const { data } = await shopifyFetch<{ collection: any }>({
       query: GET_COLLECTION_BY_HANDLE,
       variables: { handle, first: 24 },
       revalidate: 1800, // 30 minutes

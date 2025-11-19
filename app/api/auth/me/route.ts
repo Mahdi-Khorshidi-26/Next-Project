@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ customer: null }, { status: 200 });
     }
 
-    const { data, errors } = await shopifyFetch({
+    const { data, errors } = await shopifyFetch<{ customer: any }>({
       query: GET_CUSTOMER,
       variables: {
         customerAccessToken,

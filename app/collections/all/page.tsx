@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 
 async function getAllProducts(): Promise<Product[]> {
   try {
-    const data = await shopifyFetch<{
+    const { data } = await shopifyFetch<{
       products: {
         edges: Array<{
           node: any;

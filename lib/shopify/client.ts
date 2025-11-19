@@ -23,7 +23,7 @@ export async function shopifyFetch<T>({
   variables = {},
   cache = "force-cache",
   revalidate,
-}: ShopifyFetchOptions): Promise<T> {
+}: ShopifyFetchOptions): Promise<ShopifyResponse<T>> {
   try {
     const response = await fetch(endpoint, {
       method: "POST",
@@ -62,10 +62,9 @@ export async function shopifyFetch<T>({
     // Handle GraphQL errors
     if (json.errors) {
       console.error("GraphQL errors:", json.errors);
-      throw new Error(json.errors[0]?.message || "GraphQL error occurred");
     }
 
-    return json.data;
+    return json;
   } catch (error) {
     console.error("Shopify API fetch error:", error);
     throw error;

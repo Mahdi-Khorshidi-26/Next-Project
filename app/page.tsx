@@ -6,7 +6,7 @@ import { Product } from "@/types/shopify";
 
 async function getFeaturedProducts(): Promise<Product[]> {
   try {
-    const data = await shopifyFetch<{
+    const { data } = await shopifyFetch<{
       products: { edges: Array<{ node: Product }> };
     }>({
       query: GET_PRODUCTS,

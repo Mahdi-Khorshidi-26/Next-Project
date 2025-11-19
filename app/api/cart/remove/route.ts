@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "No cart found" }, { status: 404 });
     }
 
-    const result = await shopifyFetch<any>({
+    const { data: result } = await shopifyFetch<any>({
       query: REMOVE_FROM_CART,
       variables: {
         cartId,

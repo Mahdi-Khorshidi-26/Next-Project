@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const result = await shopifyFetch({
+    const { data: result } = await shopifyFetch({
       query: CUSTOMER_ACCESS_TOKEN_CREATE,
       variables: {
         input: {

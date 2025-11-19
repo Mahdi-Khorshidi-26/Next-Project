@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    const data = await shopifyFetch<{
+    const { data } = await shopifyFetch<{
       products: {
         edges: Array<{
           node: Product;
