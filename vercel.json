@@ -5,8 +5,8 @@
   "framework": "nextjs",
   "regions": ["iad1"],
   "env": {
-    "NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN": "@next_public_shopify_store_domain",
-    "NEXT_PUBLIC_STOREFRONT_API_TOKEN": "@next_public_storefront_api_token",
-    "SHOPIFY_ADMIN_ACCESS_TOKEN": "@shopify_admin_access_token"
+    "NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN": "vytfm1-sb.myshopify.com",
+    "NEXT_PUBLIC_STOREFRONT_API_TOKEN": "02284805b08c35fc3bfa5d03f2c3d2a4",
+    "SHOPIFY_ADMIN_ACCESS_TOKEN": "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"
   }
 }
