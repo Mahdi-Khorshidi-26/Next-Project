@@ -263,16 +263,67 @@ npm run build
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
-1. Push your code to GitHub
-2. Import your repository in Vercel
-3. Add environment variables in Vercel dashboard
-4. Deploy!
+#### Option 1: Deploy via Vercel Dashboard
 
-**Environment Variables for Vercel:**
+1. Push your code to GitHub/GitLab/Bitbucket
+2. Go to [vercel.com](https://vercel.com) and sign in
+3. Click "Add New Project" → Import your repository
+4. Configure your project:
+   - **Framework Preset**: Next.js (auto-detected)
+   - **Root Directory**: `./` (leave as is)
+   - **Build Command**: `next build` (auto-configured)
+   - **Output Directory**: `.next` (auto-configured)
+5. Add environment variables:
+   - `NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN` = `your-store.myshopify.com`
+   - `NEXT_PUBLIC_STOREFRONT_API_TOKEN` = `your_storefront_token`
+   - `SHOPIFY_ADMIN_ACCESS_TOKEN` = `your_admin_token` (optional)
+6. Click "Deploy"
 
+#### Option 2: Deploy via Vercel CLI
+
+```bash
+# Install Vercel CLI globally
+npm i -g vercel
+
+# Login to Vercel
+vercel login
+
+# Deploy to preview
+vercel
+
+# Deploy to production
+vercel --prod
+```
+
+During deployment, you'll be prompted to add environment variables. Make sure to add:
 - `NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN`
 - `NEXT_PUBLIC_STOREFRONT_API_TOKEN`
 - `SHOPIFY_ADMIN_ACCESS_TOKEN` (optional)
+
+#### Post-Deployment Steps
+
+1. **Update Site URL**: After deployment, update your `.env.local` and Vercel environment variable:
+   ```
+   NEXT_PUBLIC_SITE_URL=https://your-vercel-url.vercel.app
+   ```
+
+2. **Configure Custom Domain** (Optional):
+   - Go to Vercel Dashboard → Your Project → Settings → Domains
+   - Add your custom domain and follow DNS configuration steps
+
+3. **Enable Analytics** (Optional):
+   - Go to Vercel Dashboard → Your Project → Analytics
+   - Enable Vercel Analytics and Speed Insights
+
+4. **Configure Redirects** (Optional):
+   - Update `vercel.json` for custom redirects and headers
+
+**Environment Variables for Vercel:**
+
+- `NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN` - Your Shopify store domain (e.g., `your-store.myshopify.com`)
+- `NEXT_PUBLIC_STOREFRONT_API_TOKEN` - Storefront API access token
+- `SHOPIFY_ADMIN_ACCESS_TOKEN` - Admin API token (optional, for advanced features)
+- `NEXT_PUBLIC_SITE_URL` - Your production URL (e.g., `https://your-store.vercel.app`)
 
 ## 🎯 Key Features Explained
 

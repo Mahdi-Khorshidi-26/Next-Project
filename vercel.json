@@ -1,0 +1,12 @@
+{
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "regions": ["iad1"],
+  "env": {
+    "NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN": "@next_public_shopify_store_domain",
+    "NEXT_PUBLIC_STOREFRONT_API_TOKEN": "@next_public_storefront_api_token",
+    "SHOPIFY_ADMIN_ACCESS_TOKEN": "@shopify_admin_access_token"
+  }
+}
