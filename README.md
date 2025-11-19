@@ -296,6 +296,7 @@ vercel --prod
 ```
 
 During deployment, you'll be prompted to add environment variables. Make sure to add:
+
 - `NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN`
 - `NEXT_PUBLIC_STOREFRONT_API_TOKEN`
 - `SHOPIFY_ADMIN_ACCESS_TOKEN` (optional)
@@ -303,15 +304,18 @@ During deployment, you'll be prompted to add environment variables. Make sure to
 #### Post-Deployment Steps
 
 1. **Update Site URL**: After deployment, update your `.env.local` and Vercel environment variable:
+
    ```
    NEXT_PUBLIC_SITE_URL=https://your-vercel-url.vercel.app
    ```
 
 2. **Configure Custom Domain** (Optional):
+
    - Go to Vercel Dashboard → Your Project → Settings → Domains
    - Add your custom domain and follow DNS configuration steps
 
 3. **Enable Analytics** (Optional):
+
    - Go to Vercel Dashboard → Your Project → Analytics
    - Enable Vercel Analytics and Speed Insights
 

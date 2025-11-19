@@ -26,15 +26,18 @@ git push -u origin main
 ### 2. Deploy via Vercel Dashboard
 
 1. **Sign in to Vercel**
+
    - Go to [vercel.com](https://vercel.com)
    - Sign in with your GitHub/GitLab/Bitbucket account
 
 2. **Import Project**
+
    - Click "Add New..." → "Project"
    - Select your repository
    - Click "Import"
 
 3. **Configure Project**
+
    - **Framework Preset**: Next.js (auto-detected)
    - **Root Directory**: `./` (default)
    - **Build Command**: `next build` (auto-configured)
@@ -42,14 +45,14 @@ git push -u origin main
    - **Install Command**: `npm install` (auto-configured)
 
 4. **Add Environment Variables**
-   
+
    Click "Environment Variables" and add:
 
-   | Name | Value | Environment |
-   |------|-------|-------------|
-   | `NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN` | `your-store.myshopify.com` | Production, Preview, Development |
+   | Name                               | Value                          | Environment                      |
+   | ---------------------------------- | ------------------------------ | -------------------------------- |
+   | `NEXT_PUBLIC_SHOPIFY_STORE_DOMAIN` | `your-store.myshopify.com`     | Production, Preview, Development |
    | `NEXT_PUBLIC_STOREFRONT_API_TOKEN` | `your_storefront_access_token` | Production, Preview, Development |
-   | `SHOPIFY_ADMIN_ACCESS_TOKEN` | `your_admin_token` (optional) | Production, Preview, Development |
+   | `SHOPIFY_ADMIN_ACCESS_TOKEN`       | `your_admin_token` (optional)  | Production, Preview, Development |
 
 5. **Deploy**
    - Click "Deploy"
@@ -176,6 +179,7 @@ Once connected, Vercel automatically deploys:
 ### Vercel Configuration
 
 The included `vercel.json` configures:
+
 - Build settings
 - Environment variables
 - Regional deployment (US East by default)
